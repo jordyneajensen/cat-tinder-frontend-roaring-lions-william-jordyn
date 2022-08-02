@@ -8,6 +8,11 @@ import {
 import Header from './components/Header'
 import Footer from './components/Footer'
 import NotFound from './pages/NotFound'
+import Home from './pages/Home'
+import BigCatEdit from './pages/BigCatEdit'
+import BigCatIndex from './pages/BigCatIndex'
+import BigCatNew from './pages/BigCatNew'
+import BigCatShow from './pages/BigCatShow'
 
 export class App extends Component {
   constructor(props) {
