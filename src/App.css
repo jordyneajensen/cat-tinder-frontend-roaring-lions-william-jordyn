@@ -1,0 +1,11 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    margin: 1rem;
+    font-family: 'Lobster';
+    text-align: center;
+}
+.roaring-lions-header {
+    font-family: 'Lobster';
+}
