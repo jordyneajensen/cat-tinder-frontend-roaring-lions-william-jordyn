@@ -27,8 +27,6 @@ body {
 .lion-not-found {
     height: 700px;
     width: 100%;
-    opacity: 0.50;
-    background-image: url("https://unsplash.com/photos/8oLnCRz7hwM");
     background-size: cover;
 }
 
