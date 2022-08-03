@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-BigCatNew extends Component {
+class BigCatNew extends Component {
   render() {
     return (
       <div>BigCatNew</div>
