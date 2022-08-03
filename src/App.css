@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+body {
+    margin: 1rem;
+    font-family: 'Lobster';
+    text-align: center;
+}
+.roaring-lions-header {
+    font-family: 'Lobster';
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-container {
+    background-color: rgb(243, 196, 139);
+    font-family: 'Lobster';
+    width: 100%;
+}
+.lion-gif {
+    height: 50px;
+    display: flex;
+}
+.not-found {
+    font-family: 'Lobster';
+    text-align: center;
+}
+.lion-not-found {
+    height: 700px;
+    width: 100%;
+    background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer {
+    font-family: 'Lobster';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(243, 196, 139);
+    bottom: 0;
+    position: fixed;
 }
