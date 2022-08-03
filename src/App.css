@@ -40,3 +40,8 @@ body {
     bottom: 0;
     position: fixed;
 }
+
+.homeHeading {
+    font-family: 'Lobster';
+    text-align: center;
+}
