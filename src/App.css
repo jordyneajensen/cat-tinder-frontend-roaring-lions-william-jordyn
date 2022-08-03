@@ -8,4 +8,37 @@ body {
 }
 .roaring-lions-header {
     font-family: 'Lobster';
+    text-align: center;
+}
+
+.header-container {
+    background-color: rgb(243, 196, 139);
+    font-family: 'Lobster';
+    width: 100%;
+}
+.lion-gif {
+    height: 50px;
+    display: flex;
+}
+.not-found {
+    font-family: 'Lobster';
+    text-align: center;
+}
+.lion-not-found {
+    height: 700px;
+    width: 100%;
+    opacity: 0.50;
+    background-image: url("https://unsplash.com/photos/8oLnCRz7hwM");
+    background-size: cover;
+}
+
+.footer {
+    font-family: 'Lobster';
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(243, 196, 139);
+    bottom: 0;
+    position: fixed;
 }

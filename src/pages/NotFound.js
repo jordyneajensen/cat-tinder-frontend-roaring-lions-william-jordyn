@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import notfoundlion from '../assets/notfoundlion.jpg'
 
-export class NotFound extends Component {
+class NotFound extends Component {
   render() {
     return (
       <>
+      <div className="not-found">
         <h1>Being Brave Doesn't Mean You Go looking For Trouble -- Mufasa</h1>
-        <button>Click here to navigate back to home page</button>
+        <img className="lion-not-found" src={notfoundlion}/>
+      </div>
       </>
     )
   }

@@ -25,10 +25,11 @@ const Header = (args) => {
   return (
     <div className="header-container">
       <Navbar {...args} className="navbar-expand">
+      <NavbarText><img src={lion} className="lion-gif" margin="10px"/></NavbarText>
         <NavbarBrand href="/" className="roaring-lions-header">Welcome to Roaring Lions</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="me-auto" navbar>
+          <Nav className="ms-auto" navbar>
             <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>
@@ -39,7 +40,7 @@ const Header = (args) => {
               <NavLink href="/bigcatnew">Edit</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText><img src={lion} className="lion-gif"/></NavbarText>
+         
         </Collapse>
       </Navbar>
     </div>
