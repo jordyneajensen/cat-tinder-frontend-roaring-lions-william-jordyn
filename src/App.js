@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import mockBigCats from './mockBigCats'
+import './App.css'
+import cats from './mockBigCats'
 import {
   BrowserRouter as Router,
   Route,
@@ -7,29 +8,36 @@ import {
 } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import NotFound from './pages/NotFound'
 import Home from './pages/Home'
-import BigCatEdit from './pages/BigCatEdit'
 import BigCatIndex from './pages/BigCatIndex'
-import BigCatNew from './pages/BigCatNew'
 import BigCatShow from './pages/BigCatShow'
-import './App.css'
+import BigCatNew from './pages/BigCatNew'
+import BigCatEdit from './pages/BigCatEdit'
+import NotFound from './pages/NotFound'
+
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cats: mockBigCats
+      cats: cats
     }
+  }
+  createNewCat = (theNewCatObject) => {
+    console.log(theNewCatObject)
   }
   render() {
     return (
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/bigcatindex" component={BigCatIndex} />
-          <Route path="/bigcatshow" component={BigCatShow} />
+          <Route path="/bigcatindex" render={(props) => <BigCatIndex cats={this.state.cats} />} />
+          <Route exact path="/" component={Home} />       
+          <Route path="/bigcatshow/:id" render={(props) => {
+            let id = +props.match.params.id
+            let cat = this.state.cats.find(catObject => catObject.id === id)
+              return <BigCatShow cat={cat} />
+          }} />
           <Route path="/bigcatnew" component={BigCatNew} />
           <Route path="/bigcatedit" component={BigCatEdit} />
           <Route component={NotFound}/>
