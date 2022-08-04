@@ -23,12 +23,6 @@ describe("When Header renders", ()=> {
         expect(renderedHomeRoute.length).toEqual(2);
     })
 
-    it("provides a route of '/BigCatShow' to the home component", ()=>{
-        
-        const renderedCatShowRoute = renderedHeader.find("[href='/bigcatshow']");
-        expect(renderedCatShowRoute.length).toEqual(1);
-    })
-
     it("provides a route of '/BigCatNew' to the home component", ()=>{
         
         const renderedCatNewRoute = renderedHeader.find("[href='/bigcatnew']");

@@ -13,6 +13,7 @@ import BigCatIndex from './pages/BigCatIndex'
 import BigCatShow from './pages/BigCatShow'
 import BigCatNew from './pages/BigCatNew'
 import BigCatEdit from './pages/BigCatEdit'
+import About from './pages/About'
 import NotFound from './pages/NotFound'
 
 
@@ -26,6 +27,12 @@ class App extends Component {
   createNewCat = (theNewCatObject) => {
     console.log(theNewCatObject)
   }
+
+  updateCat = (cat, id) => {
+    console.log("cat:", cat)
+    console.log("id:", id)
+  }
+
   render() {
     return (
       <Router>
@@ -42,7 +49,12 @@ class App extends Component {
             let cat = this.state.cats.find(catObject => catObject.id === id)
               return <BigCatShow cat={cat} />
           }} />
-          <Route path="/bigcatedit" component={BigCatEdit} />
+          <Route path="/bigcatedit/:id" render={(props) => {
+            let id = props.match.params.id
+            let cat = this.state.cats.find(cat => cat.id === +id)
+            return <BigCatEdit updateCat={this.updateCat} cat={cat} />
+          }} />
+          <Route path="/about" component={About} />
           <Route component={NotFound}/>
         </Switch>
         <Footer />

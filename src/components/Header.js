@@ -34,10 +34,10 @@ const Header = (args) => {
               <NavLink href="/">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/bigcatshow">Show</NavLink>
+              <NavLink href="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/bigcatnew">Edit</NavLink>
+              <NavLink href="/bigcatnew">New</NavLink>
             </NavItem>
           </Nav>
          

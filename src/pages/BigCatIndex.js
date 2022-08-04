@@ -3,6 +3,7 @@ import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
+
 class BigCatIndex extends Component {
   render() {
     return (

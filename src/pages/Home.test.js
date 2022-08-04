@@ -14,7 +14,7 @@ describe("When Home renders", ()=> {
 
     it("has an header containing text", ()=>{
         const homeHeading = renderedHome.find("h2").text()
-        expect(homeHeading).toEqual("Find Your Pawwfect Mate")
+        expect(homeHeading).toEqual("Find Your Pawwfect Mate!")
     })
     
 })
