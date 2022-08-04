@@ -33,12 +33,15 @@ class App extends Component {
         <Switch>
           <Route path="/bigcatindex" render={(props) => <BigCatIndex cats={this.state.cats} />} />
           <Route exact path="/" component={Home} />       
+          <Route path="/bigcatnew"
+                 render={() => {
+                  return <BigCatNew createNewCat={this.createNewCat}/>
+                 }} />
           <Route path="/bigcatshow/:id" render={(props) => {
             let id = +props.match.params.id
             let cat = this.state.cats.find(catObject => catObject.id === id)
               return <BigCatShow cat={cat} />
           }} />
-          <Route path="/bigcatnew" component={BigCatNew} />
           <Route path="/bigcatedit" component={BigCatEdit} />
           <Route component={NotFound}/>
         </Switch>
