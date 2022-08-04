@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle} from 'reactstrap';
+  CardTitle, CardSubtitle, Button} from 'reactstrap';
+import { NavLink } from 'react-router-dom'
 
 
 class BigCatShow extends Component {
@@ -15,8 +16,12 @@ class BigCatShow extends Component {
             <CardTitle>Hi, my name is {cat.name}</CardTitle>
             <CardSubtitle>{cat.age}</CardSubtitle>
             <CardText>{cat.enjoys}</CardText>
+            <NavLink to={`/bigcatedit/${this.props.cat.id}`}>
+              <Button>Edit Cat Profile</Button>
+            </NavLink>
           </CardBody>
         </Card>
+        
       </>
     )
   }

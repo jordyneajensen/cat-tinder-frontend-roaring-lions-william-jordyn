@@ -1,9 +1,10 @@
 /* General Styling */
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Mouse+Memoirs&display=swap');
 
 body {
     margin: 1rem;
-    font-family: 'Lobster';
+    font-family: 'Ubuntu';
     text-align: center;
 }
 .roaring-lions-header {
@@ -20,6 +21,15 @@ body {
     height: 50px;
     display: flex;
 }
+.homeHeading {
+    font-family: 'Mouse Memoirs', sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Mouse Memoirs', sans-serif;
+    text-align: center;
+}
 .not-found {
     font-family: 'Lobster';
     text-align: center;
@@ -31,7 +41,7 @@ body {
 }
 
 .footer {
-    font-family: 'Lobster';
+    font-family: 'Ubuntu';
     text-align: center;
     display: flex;
     justify-content: center;
@@ -39,9 +49,4 @@ body {
     background-color: rgb(243, 196, 139);
     bottom: 0;
     position: fixed;
-}
-
-.homeHeading {
-    font-family: 'Lobster';
-    text-align: center;
 }
