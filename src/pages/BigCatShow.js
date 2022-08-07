@@ -19,6 +19,7 @@ class BigCatShow extends Component {
             <NavLink to={`/bigcatedit/${this.props.cat.id}`}>
               <Button>Edit Cat Profile</Button>
             </NavLink>
+            <Button onClick={() => this.props.deleteCat(cat.id)}>Delete Cat</Button>
           </CardBody>
         </Card>
         

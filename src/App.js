@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import './App.css'
-import cats from './mockBigCats'
 import {
   BrowserRouter as Router,
   Route,
@@ -21,39 +20,81 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      cats: cats
+      cats: []
     }
   }
+
+  componentDidMount() {
+   this.readCat()
+  }
+
+  readCat = () => {
+    fetch("http://localhost:3000/big_cats") 
+    .then(response => response.json()) 
+    .then(payload => this.setState({cats: payload }))
+    .catch(errors => console.log("Cat read errors: ", errors))
+  }
+
   createNewCat = (theNewCatObject) => {
-    console.log(theNewCatObject)
+    fetch("http://localhost:3000/big_cats", {
+      body: JSON.stringify(theNewCatObject),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method:"POST" 
+  })
+  .then(response => response.json())
+  .then(() => this.readCat())
+  .catch(errors => console.log("Cat new errors: ", errors))
   }
 
   updateCat = (cat, id) => {
-    console.log("cat:", cat)
-    console.log("id:", id)
+    fetch(`http://localhost:3000/big_cats/${id}`, {
+      body: JSON.stringify(cat),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "PATCH"
+    })
+    .then(response => response.json())
+    .then(() => this.readCat())
+    .catch(errors => console.log("Cat update errors: ", errors))
+  }
+
+  deleteCat = (id) => {
+    fetch(`http://localhost:3000/big_cats/${id}`,{
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method:"DELETE"
+    })
+    .then(response => response.json())
+    .then(() => this.readCat())
+    .catch(errors => console.log("Delete cat errors", errors)) 
   }
 
   render() {
+    console.log('appjs state: ', this.state)
     return (
       <Router>
         <Header />
         <Switch>
-          <Route path="/bigcatindex" render={(props) => <BigCatIndex cats={this.state.cats} />} />
-          <Route exact path="/" component={Home} />       
+          <Route exact path="/" component={Home} />
+          <Route path="/bigcatindex" render={() => <BigCatIndex cats={this.state.cats} />} /> 
+          <Route path="/bigcatshow/:id" render={(props) => {
+            let id = +props.match.params.id
+            let cat = this.state.cats.find(catObject => catObject.id === id)
+              return <BigCatShow cat={cat} deleteCat={this.deleteCat} />
+          }} />
+          <Route path="/bigcatedit/:id" render={(props) => {
+            let id = +props.match.params.id
+            let cat = this.state.cats.find(catObject => catObject.id === id)
+            return <BigCatEdit cat={cat} updateCat={this.updateCat} />
+          }} />       
           <Route path="/bigcatnew"
                  render={() => {
                   return <BigCatNew createNewCat={this.createNewCat}/>
                  }} />
-          <Route path="/bigcatshow/:id" render={(props) => {
-            let id = +props.match.params.id
-            let cat = this.state.cats.find(catObject => catObject.id === id)
-              return <BigCatShow cat={cat} />
-          }} />
-          <Route path="/bigcatedit/:id" render={(props) => {
-            let id = props.match.params.id
-            let cat = this.state.cats.find(cat => cat.id === +id)
-            return <BigCatEdit updateCat={this.updateCat} cat={cat} />
-          }} />
           <Route path="/about" component={About} />
           <Route component={NotFound}/>
         </Switch>
