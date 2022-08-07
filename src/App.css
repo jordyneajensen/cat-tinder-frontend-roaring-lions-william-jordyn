@@ -50,3 +50,18 @@ h3 {
     bottom: 0;
     position: fixed;
 }
+
+.index-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center; 
+  }
+
+  .page-body {
+    text-align: center;
+    margin: 3rem;
+    min-height: calc(100vh - 34px);
+  }
+
+ 

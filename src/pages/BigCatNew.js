@@ -10,6 +10,7 @@ class BigCatNew extends Component {
           name:"",
           age: "",
           enjoys: "",
+          funfact:"",
           image:""
         },
         submitted: false
@@ -55,6 +56,17 @@ class BigCatNew extends Component {
             onChange={this.handleChange}
 
           />
+
+        </FormGroup>
+        <FormGroup>
+          <Label for="funfact">Fun Fact</Label>
+          <Input 
+            type="text" 
+            name="funfact"
+            onChange={this.handleChange}
+
+          />
+
         </FormGroup>
         <FormGroup>
           <Label for="image">Image</Label>

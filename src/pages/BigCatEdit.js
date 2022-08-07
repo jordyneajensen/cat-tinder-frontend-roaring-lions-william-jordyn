@@ -8,23 +8,25 @@ class BigCatEdit extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      newCat: {
-        name: "",
-        age: "",
-        enjoys: "",
-        image: ""
-      }
+      updatedCat: {
+        name: this.props.cat.name,
+        age: this.props.cat.age,
+        enjoys: this.props.cat.enjoys,
+        funfact: this.props.cat.funfact,
+        image: this.props.cat.image
+      },
+      submitted: false
     }
   }
   
   handleChange = (e) => {
-    let { newCat } = this.state
-    newCat[e.target.name] = e.target.value
-    this.setState({newCat: newCat})
+    let { updatedCat } = this.state
+    updatedCat[e.target.name] = e.target.value
+    this.setState({updatedCat: updatedCat})
   }
 
   handleSubmit = () => {
-    this.props.updateCat(this.state.newCat, this.props.cat.id)
+    this.props.updateCat(this.state.updatedCat, this.props.cat.id)
     this.setState({submitted: true})
   }
 
@@ -38,6 +40,7 @@ class BigCatEdit extends Component {
               type="text"
               name="name"
               onChange={this.handleChange}
+              value={ this.state.updatedCat.name }
             />
           </FormGroup>
           <FormGroup>
@@ -46,6 +49,7 @@ class BigCatEdit extends Component {
               type="number"
               name="age"
               onChange={this.handleChange}
+              value={ this.state.updatedCat.age }
             />
           </FormGroup>
           <FormGroup>
@@ -54,6 +58,16 @@ class BigCatEdit extends Component {
               type="text"
               name="enjoys"
               onChange={this.handleChange}
+              value={ this.state.updatedCat.enjoys }
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label for="funfact">Fun Fact</Label>
+            <Input
+              type="text"
+              name="funfact"
+              onChange={this.handleChange}
+              value={ this.state.updatedCat.funfact }
             />
           </FormGroup>
           <FormGroup>
@@ -61,6 +75,8 @@ class BigCatEdit extends Component {
             <Input
               type="text"
               name="image"
+              onChange={this.handleChange}
+              value={ this.state.updatedCat.image }
             />
           </FormGroup>
           <Button
