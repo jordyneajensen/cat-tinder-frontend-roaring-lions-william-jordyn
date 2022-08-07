@@ -14,8 +14,9 @@ class BigCatShow extends Component {
           <CardImg top width="100%" src={this.props.cat.image} alt="Card image cap" />
           <CardBody>
             <CardTitle>Hi, my name is {cat.name}</CardTitle>
-            <CardSubtitle>{cat.age}</CardSubtitle>
+            <CardSubtitle> I am {cat.age}</CardSubtitle>
             <CardText>{cat.enjoys}</CardText>
+            <CardText>{cat.funfact}</CardText>
             <NavLink to={`/bigcatedit/${this.props.cat.id}`}>
               <Button>Edit Cat Profile</Button>
             </NavLink>
