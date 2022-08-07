@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardImg, CardBody, Row, Col,
+import { Card, CardImg, CardBody, 
   CardTitle, CardSubtitle, Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
 
