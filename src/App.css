@@ -63,3 +63,31 @@ h3 {
     margin: 3rem;
     min-height: calc(100vh - 34px);
   }
+
+  .card-container img{
+    height:350px;
+    width:350px;
+    border: 1px solid black;
+    border-radius: 7px;
+  }
+
+  .card-container{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    width:30%;
+    display: flex;
+    align-items: center;
+  }
+
+.card-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.card-text {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.button {
+    margin-bottom: 10px;
+}
