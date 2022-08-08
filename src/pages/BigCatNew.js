@@ -80,6 +80,7 @@ class BigCatNew extends Component {
         <Button
           name="submit"
           onClick={this.handleSubmit}
+          className='submit'
           >Submit Cat
         </Button>
         { this.state.submitted && <Redirect to="/bigcatindex"/> }
