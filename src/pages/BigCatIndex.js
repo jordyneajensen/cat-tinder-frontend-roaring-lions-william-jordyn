@@ -17,7 +17,6 @@ class BigCatIndex extends Component {
                     <CardImg top width="100%" src={cat.image} alt="Card image cap" />
                     <CardBody>
                       <CardTitle>{cat.name}</CardTitle>
-                      <CardSubtitle>{cat.age}</CardSubtitle>
                       <NavLink to={`/bigcatshow/${cat.id}`}>
                         <Button>More info here</Button>
                       </NavLink>
