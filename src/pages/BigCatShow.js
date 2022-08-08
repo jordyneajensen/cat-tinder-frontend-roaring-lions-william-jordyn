@@ -11,7 +11,7 @@ class BigCatShow extends Component {
     return (
       <>
         <Card>
-          <CardImg top width="100%" src={cat.image} alt="Card image cap" />
+          <CardImg top width="100%" src={this.props.cat.image} alt="Card image cap" />
           <CardBody>
             <CardTitle>Hi, my name is {cat.name}!</CardTitle>
             <CardSubtitle>I am {cat.age} years old.</CardSubtitle>

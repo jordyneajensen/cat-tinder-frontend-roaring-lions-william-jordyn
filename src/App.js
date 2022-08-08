@@ -74,7 +74,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('appjs state: ', this.state)
     return (
       <Router>
         <Header />
